@@ -1,29 +1,13 @@
 package config
 
-type Config struct {
-	DB *DBConfig
-}
+import "github.com/caarlos0/env/v6"
 
-type DBConfig struct {
-	Dialect  string
-	Host     string
-	Port     int
-	Username string
-	Password string
-	Name     string
-	Charset  string
+type Config struct {
+	Something string `json:"something"`
 }
 
 func GetConfig() *Config {
-	return &Config{
-		DB: &DBConfig{
-			Dialect:  "mysql",
-			Host:     "127.0.0.1",
-			Port:     3306,
-			Username: "guest",
-			Password: "Guest0000!",
-			Name:     "todoapp",
-			Charset:  "utf8",
-		},
-	}
+	cfg := &Config{}
+	env.Parse(cfg)
+	return cfg
 }
