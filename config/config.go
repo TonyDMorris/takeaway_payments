@@ -6,7 +6,7 @@ type Config struct {
 	StrapiURL         string `env:"STRAPI_URL"`
 	ServiceIdentifier string `env:"SERVICE_IDENTIFIER"`
 	ServicePassword   string `env:"SERVICE_PASSWORD"`
-
+	// DB Config
 	DBHost     string `env:"DB_HOST"`
 	DBPort     int    `env:"DB_PORT"`
 	DBUsername string `env:"DB_USERNAME"`
