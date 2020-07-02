@@ -3,7 +3,7 @@ package config
 import "github.com/caarlos0/env/v6"
 
 type Config struct {
-	StrapiURL         string `env:"STRAPI_URL"`
+	StrapiURL         string `env:"STRAPI_URL" envDefault:"https://api.towidomo.dev"`
 	ServiceIdentifier string `env:"SERVICE_IDENTIFIER"`
 	ServicePassword   string `env:"SERVICE_PASSWORD"`
 	// DB Config
